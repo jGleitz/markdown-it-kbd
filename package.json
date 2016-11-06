@@ -1,0 +1,57 @@
+{
+  "name": "markdown-it-kbd",
+  "version": "1.0.1",
+  "description": "Markdown-it syntax add-on for keystrokes. Renders [[x]] as <kbd>x</kbd>",
+  "keywords": [
+    "markdown-it",
+    "markdown-it-plugin",
+    "keystroke",
+    "kbd"
+  ],
+  "homepage": "https://github.com/jGleitz/markdown-it-kbd",
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Joshua Gleitze",
+    "url": "https://joshuagleitze.de"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "build/index.js"
+  ],
+  "main": "build/index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jGleitz/markdown-it-kbd.git"
+  },
+  "scripts": {
+    "build": "babel *.js -d build",
+    "lint": "eslint *.js",
+    "prepublish": "npm run build",
+    "pretest": " npm run build",
+    "unittest": "mocha build/test.js",
+    "test": "npm run lint && npm run unittest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-latest": "^6.16.0",
+    "chai": "*",
+    "chai-string": "^1.2.0",
+    "eslint": "^3.8.0",
+    "markdown-it": "^8.0.0",
+    "mocha": "*"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  }
+}
