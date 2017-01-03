@@ -3,6 +3,7 @@
 import chai, {expect} from 'chai';
 import chaiString from 'chai-string';
 import markdownit from 'markdown-it';
+import markdownItAttrs from 'markdown-it-attrs';
 import markdownItKbd from './index';
 import fs from 'fs';
 
@@ -33,5 +34,13 @@ describe('markdown-it-kbd', () => {
 	it('allows markup within [[ and ]]', () => {
 		expect(md.render(read('input/markupwithin.md')))
 			.to.equalIgnoreSpaces(read('expected/markupwithin.html'));
+	});
+
+	it('can be used together with markdown-it-attrs', () => {
+		const mdwithattrs = markdownit()
+			.use(markdownItKbd)
+			.use(markdownItAttrs);
+		expect(mdwithattrs.render(read('input/withattrs.md')))
+            .to.equalIgnoreSpaces(read('expected/withattrs.html'));
 	});
 });
