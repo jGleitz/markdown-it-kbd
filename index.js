@@ -44,7 +44,7 @@ function tokenize(state, silent) {
 	}
 
 	// start tag
-	state.push('kbd', TAG, 1);
+	state.push('kbd_open', TAG, 1);
 	// parse inner
 	state.pos += 2;
 	state.posMax = end;
@@ -52,8 +52,8 @@ function tokenize(state, silent) {
 	state.pos = end + 2;
 	state.posMax = max;
 	// end tag
-	state.push('kbd', TAG, -1);
-	
+	state.push('kbd_close', TAG, -1);
+
 	return true;
 }
 
