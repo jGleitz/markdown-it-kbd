@@ -1,5 +1,5 @@
 # markdown-it-kbd [![Build Status](https://travis-ci.org/jGleitz/markdown-it-prism.svg?branch=master)](https://travis-ci.org/jGleitz/markdown-it-kbd) [![dependencies Status](https://david-dm.org/jGleitz/markdown-it-prism/status.svg)](https://david-dm.org/jGleitz/markdown-it-kbd)
-> [markdown-it](https://github.com/markdown-it/markdown-it) plugin to highlight code blocks using
+> [markdown-it](https://github.com/markdown-it/markdown-it) plugin to for keystrokes
 
 Renders `[[x]]` as `<kbd>x</kbd>`. ([`<kbd>`](http://www.w3schools.com/tags/tag_kbd.asp) is the tag for keystrokes).
 
@@ -10,6 +10,8 @@ const kbd = require('markdown-it-kbd');
 
 md.use(kbd);
 ```
+
+This plugin can also be used together with [`markdown-it-attrs`](https://github.com/arve0/markdown-it-attrs/).
 
 ## Parsing note
 
