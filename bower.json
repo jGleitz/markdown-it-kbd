@@ -3,7 +3,10 @@
   "description": "Markdown-it syntax add-on for keystrokes. Renders [[x]] as <kbd>x</kbd>",
   "main": "build/index.js",
   "authors": [
-    "[object Object]"
+    {
+      "name": "Joshua Gleitze",
+      "homepage": "https://joshuagleitze.de"
+    }
   ],
   "license": "GPL-3.0",
   "keywords": [
@@ -12,7 +15,7 @@
     "keystroke",
     "kbd"
   ],
-  "homepage": "https://github.com/system76/markdown-it-kbd",
+  "homepage": "https://github.com/jGleitz/markdown-it-kbd",
   "ignore": [
     "**/.*",
     "node_modules",
