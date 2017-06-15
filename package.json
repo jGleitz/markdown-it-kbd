@@ -42,7 +42,7 @@
     "babel-preset-latest": "^6.16.0",
     "chai": "*",
     "chai-string": "^1.2.0",
-    "eslint": "^3.8.0",
+    "eslint": "^4.0.0",
     "markdown-it": "^8.0.0",
     "markdown-it-attrs": "^0.9.0",
     "mocha": "*"

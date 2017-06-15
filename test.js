@@ -41,6 +41,6 @@ describe('markdown-it-kbd', () => {
 			.use(markdownItKbd)
 			.use(markdownItAttrs);
 		expect(mdwithattrs.render(read('input/withattrs.md')))
-            .to.equalIgnoreSpaces(read('expected/withattrs.html'));
+			.to.equalIgnoreSpaces(read('expected/withattrs.html'));
 	});
 });
