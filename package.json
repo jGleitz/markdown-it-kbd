@@ -44,8 +44,8 @@
     "chai-string": "^1.2.0",
     "eslint": "^4.0.0",
     "markdown-it": "^8.0.0",
-    "markdown-it-attrs": "^0.9.0",
-    "mocha": "^3.4.2"
+    "markdown-it-attrs": "^1.2.0",
+    "mocha": "^4.0.1"
   },
   "babel": {
     "presets": [
