@@ -43,7 +43,7 @@ function tokenize(state, silent) {
 		}
 	}
 
-	// not found the end
+	// input ended before closing sequence
 	if (end === -1) {
 		return false;
 	}
