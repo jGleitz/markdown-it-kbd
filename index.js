@@ -43,6 +43,11 @@ function tokenize(state, silent) {
 		}
 	}
 
+	// not found the end
+	if (end === -1) {
+		return false;
+	}
+
 	// start tag
 	state.push('kbd_open', TAG, 1);
 	// parse inner
