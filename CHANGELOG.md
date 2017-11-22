@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.1.1] - 2017-11-22
 ### Fixed
- * Fix death loop that occured if an opening tag was present without a following line break or closing tag (thanks to [yamash723](https://github.com/jGleitz/markdown-it-kbd/pull/3)!)
+ * Fix for the death loop that occurred if an opening tag was present without a following line break or closing tag (thanks to [yamash723](https://github.com/jGleitz/markdown-it-kbd/pull/3)!)
 
 ## [1.1.0] - 2017-01-03
 ### Added
