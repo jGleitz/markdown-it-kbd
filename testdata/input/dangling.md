@@ -5,3 +5,6 @@ Here are some combinations to confuse the parser:
 [[bar]] ]] hey
 [[this]] [[ [[and that]]
 [[that]] ]] [[and this]]
+[[ *some markup* [[ `more markup` [[valid]] **even more**
+[[
+[[*test*
