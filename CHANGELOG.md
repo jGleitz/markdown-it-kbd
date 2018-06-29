@@ -3,6 +3,7 @@
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
+ * Deprecate Node.JS 4 and require Node.JS >= 6
 
 ## [1.1.1] - 2017-11-22
 ### Fixed
