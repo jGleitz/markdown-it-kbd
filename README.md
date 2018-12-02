@@ -13,8 +13,9 @@ md.use(kbd);
 
 This plugin can also be used together with [`markdown-it-attrs`](https://github.com/arve0/markdown-it-attrs/).
 
-## Parsing note
+## Parsing notes
 
 The end tag `]]` must be on the same line as the start tag `[[`.
 
-At the moment, “`[[`” and “`]]`” are not allowed within keystroke tags, because I can't think of a way to handle this that would make sense in all scenarios. If you think you know how it should be done, please file an issue!
+The combinations “`[[`” and “`]]`” are not allowed within keystroke tags.
+If you need to use them, use the HTML escape sequence “`&#91;&#91;`” for “`[[`” or “`&#93;&#93;`” for “`]]`”.
