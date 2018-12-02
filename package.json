@@ -32,7 +32,7 @@
     "build": "babel *.js -d build",
     "lint": "eslint *.js",
     "prepare": "npm run build",
-    "unittest": "mocha build/test.js",
+    "unittest": "mocha test.js",
     "test": "npm run lint && npm run unittest"
   },
   "dependencies": {},
