@@ -5,7 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Fixed
  * Improve the project setup
- * Improve documentation for using “`[[`” or “`]]`” inside keystrokes
+ * Improve documentation for using “`[[`” or “`]]`” inside keystrokeshttps://docs.npmjs.com/getting-started/using-two-factor-authentication
+
 
 ## [2.0.0] - 2018-11-29
 ### Deprecated
