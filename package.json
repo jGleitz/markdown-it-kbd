@@ -44,7 +44,7 @@
     "babel-plugin-add-module-exports": "^1.0.0",
     "chai": "^4.0.0",
     "chai-string": "^1.2.0",
-    "eslint": "^5.9.0",
+    "eslint": "^6.0.0",
     "markdown-it": "^8.0.0",
     "markdown-it-attrs": "^2.0.0",
     "mocha": "^6.0.0"
