@@ -51,7 +51,7 @@
     "markdown-it": "10.0.0",
     "markdown-it-attrs": "3.0.2",
     "mocha": "7.0.0",
-    "semantic-release": "^17.0.4"
+    "semantic-release": "17.0.4"
   },
   "commitlint": {
     "extends": [
