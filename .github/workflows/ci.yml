@@ -28,8 +28,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Prepare
         run: npm ci
-      - name: Test
-        run: npm test
+      - name: Lint
+        run: npm run lint
+      - name: Unit Tests
+        run: npm run unittest
 
   release:
     name: Release Check
