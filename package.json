@@ -22,7 +22,7 @@
   ],
   "main": "build/index.js",
   "engines": {
-    "node": ">=6.0.0"
+    "node": "13.8.0"
   },
   "repository": {
     "type": "git",
@@ -37,16 +37,16 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/register": "^7.0.0",
-    "babel-plugin-add-module-exports": "^1.0.0",
-    "chai": "^4.0.0",
-    "chai-string": "^1.2.0",
-    "eslint": "^6.0.0",
-    "markdown-it": "^8.0.0",
-    "markdown-it-attrs": "^2.0.0",
-    "mocha": "^7.0.0"
+    "@babel/cli": "7.1.5",
+    "@babel/core": "7.1.6",
+    "@babel/preset-env": "7.1.6",
+    "@babel/register": "7.0.0",
+    "babel-plugin-add-module-exports": "1.0.0",
+    "chai": "4.1.2",
+    "chai-string": "1.4.0",
+    "eslint": "6.8.0",
+    "markdown-it": "8.4.0",
+    "markdown-it-attrs": "2.0.0",
+    "mocha": "7.0.0"
   }
 }
