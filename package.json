@@ -48,8 +48,8 @@
     "chai-string": "1.4.0",
     "eslint": "6.8.0",
     "husky": "4.2.3",
-    "markdown-it": "8.4.0",
-    "markdown-it-attrs": "2.0.0",
+    "markdown-it": "10.0.0",
+    "markdown-it-attrs": "3.0.2",
     "mocha": "7.0.0",
     "semantic-release": "^17.0.4"
   },
