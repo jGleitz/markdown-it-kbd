@@ -23,7 +23,8 @@ jobs:
           key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nodejs
-      - uses: actions/setup-node@v1
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Prepare
@@ -41,10 +42,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-nodejs-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nodejs
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: Prepare
+        run: npm ci
       - name: Release Check
         env:
           GITHUB_TOKEN: ${{ github.token }}
