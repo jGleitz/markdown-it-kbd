@@ -32,7 +32,7 @@
     "build": "babel *.js -d build",
     "lint": "eslint *.js",
     "prepare": "npm run build",
-    "unittest": "mocha test.js",
+    "unittest": "mocha test.ts",
     "test": "npm run lint && npm run unittest"
   },
   "dependencies": {},
@@ -40,20 +40,21 @@
     "@babel/cli": "7.10.4",
     "@babel/core": "7.10.4",
     "@babel/preset-env": "7.10.4",
-    "@babel/register": "7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@commitlint/cli": "9.0.1",
     "@commitlint/config-conventional": "9.0.1",
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.0",
+    "@types/jest": "^26.0.3",
+    "@types/markdown-it": "^10.0.1",
     "babel-plugin-add-module-exports": "1.0.2",
-    "chai": "4.2.0",
-    "chai-string": "1.5.0",
     "eslint": "7.4.0",
     "husky": "4.2.5",
+    "jest": "^26.1.0",
     "markdown-it": "11.0.0",
     "markdown-it-attrs": "3.0.3",
-    "mocha": "8.0.1",
-    "semantic-release": "17.1.1"
+    "semantic-release": "17.1.1",
+    "typescript": "^3.9.6"
   },
   "commitlint": {
     "extends": [
@@ -64,9 +65,6 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "mocha": {
-    "require": "@babel/register"
   },
   "release": {
     "plugins": [
