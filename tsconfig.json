@@ -3,14 +3,15 @@
     "target": "esnext",
     "moduleResolution": "node",
     "allowJs": false,
+    "declaration": true,
+    "declarationDir": "./build",
     // Don't emit; allow Babel to transform files.
-    "noEmit": true,
+    "emitDeclarationOnly": true,
     "strict": true,
     "isolatedModules": true,
     "esModuleInterop": true
   },
   "include": [
-    "index.ts",
-    "test.ts"
+    "src/*.ts"
   ]
 }
