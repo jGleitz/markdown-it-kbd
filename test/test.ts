@@ -20,6 +20,22 @@ describe('markdown-it-kbd', () => {
 		`))
 	})
 
+	it('supports nested keystroke tags', () => {
+		expect(md.render(trimmed(`
+			[[[[Shift]]+[[F3]]]]
+		`))).toEqual(trimmed(`
+			<p><kbd><kbd>Shift</kbd>+<kbd>F3</kbd></kbd></p>
+		`))
+	})
+
+	it('supports deep nesting and markup in nested tags', () => {
+		expect(md.render(trimmed(`
+			[[[[[[Shift]]\`+\`[[_long[[x]]_]]]]-Ctrl]]+[[F4]]	
+		`))).toEqual(trimmed(`
+			<p><kbd><kbd><kbd>Shift</kbd><code>+</code><kbd><em>long<kbd>x</kbd></em></kbd></kbd>-Ctrl</kbd>+<kbd>F4</kbd></p>
+		`))
+	})
+
 	it('does not harm link rendering', () => {
 		expect(md.render(trimmed(`
 			# Test
@@ -28,6 +44,14 @@ describe('markdown-it-kbd', () => {
 		`))).toEqual(trimmed(`
 			<h1>Test</h1>
 			<p>This combination is cool: <kbd>alt</kbd>+<kbd>f4</kbd>. This link still works: <a href="http://google.com">Google</a>.</p>
+		`))
+	})
+
+	it('can be included in links', () => {
+		expect(md.render(trimmed(`
+			[[[[[Ctrl]]+[[V]]]]](https://devnull-as-a-service.com/dev/null)
+		`))).toEqual(trimmed(`
+			<p><a href="https://devnull-as-a-service.com/dev/null"><kbd><kbd>Ctrl</kbd>+<kbd>V</kbd></kbd></a></p>
 		`))
 	})
 
@@ -46,7 +70,10 @@ describe('markdown-it-kbd', () => {
 		['[[that]] ]] [[and this]]', '<kbd>that</kbd> ]] <kbd>and this</kbd>'],
 		['[[ *some markup* [[ `more markup` [[valid]] **even more**', '[[ <em>some markup</em> [[ <code>more markup</code> <kbd>valid</kbd> <strong>even more</strong>'],
 		['[[', '[['],
-		['[[*test*', '[[<em>test</em>']
+		['[[[x]]', '[<kbd>x</kbd>'],
+		['[[[x]]]', '[<kbd>x</kbd>]'],
+		['[[*test*', '[[<em>test</em>'],
+		['[[[[Shift]]+[[F3]]]', '[[<kbd>Shift</kbd>+<kbd>F3</kbd>]']
 	])('renders correctly: %s', (input, expected) => {
 		expect(md.render(input)).toBe(`<p>${expected}</p>\n`)
 	})
