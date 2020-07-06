@@ -2,6 +2,14 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# [2.2.0](https://github.com/jGleitz/markdown-it-kbd/compare/v2.1.0...v2.2.0) (2020-07-06)
+
+
+### Features
+
+* support escaping delimiters with a backslash ([54fc12f](https://github.com/jGleitz/markdown-it-kbd/commit/54fc12fc13e71c24e56ff3dc3c904cd0ef305088))
+* support nested keystroke tags ([074f7f0](https://github.com/jGleitz/markdown-it-kbd/commit/074f7f0aa3f64bec84098c2f6547cbdbe89713dc)), closes [#95](https://github.com/jGleitz/markdown-it-kbd/issues/95)
+
 # [2.1.0](https://github.com/jGleitz/markdown-it-kbd/compare/v2.0.0...v2.1.0) (2020-07-06)
 
 
