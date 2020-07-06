@@ -18,32 +18,37 @@ function tokenize(state: StateInline, silent: boolean) {
 	let momChar = state.src.charAt(start)
 	let nextChar = state.src.charAt(start + 1)
 
-	// we're looking for two times the open symbol.
+	// We are looking for two times the open symbol.
 	if (momChar !== MARKER_OPEN || nextChar !== MARKER_OPEN) {
 		return false
 	}
 
-	// find the end sequence
+	// Find the end sequence
+	let openTagCount = 1
 	let end = -1
 	nextChar = state.src.charAt(start + 2)
-	for (let i = start + 2; i < max && end === -1; i++) {
-		momChar = nextChar
-		nextChar = state.src.charAt(i+1)
+	for (let i = start + 1; i < max && end === -1; i++) {
+		momChar = state.src.charAt(i) // do not copy from nextChar because we sometimes skip over indices
+		nextChar = state.src.charAt(i + 1)
 		if (momChar === MARKER_CLOSE && nextChar === MARKER_CLOSE) {
-			// found the end!
-			end = i
-		}
-		if (momChar === MARKER_OPEN && momChar === MARKER_OPEN) {
-			// found another opening sequence before the end. Thus, ignore ours!
-			return false
-		}
-		if (momChar === '\n') {
-			// found end of line before the end sequence. Thus, ignore our start sequence!
+			openTagCount -= 1
+			if (openTagCount == 0) {
+				// Found the end!
+				end = i
+			}
+			// Skip second marker char, it is already counted.
+			i += 1
+		} else if (momChar === MARKER_OPEN && nextChar === MARKER_OPEN) {
+			openTagCount += 1
+			// Skip second marker char, it is already counted.
+			i += 1
+		} else if (momChar === '\n') {
+			// Found end of line before the end sequence. Thus, ignore our start sequence!
 			return false
 		}
 	}
 
-	// input ended before closing sequence
+	// Input ended before closing sequence.
 	if (end === -1) {
 		return false
 	}
