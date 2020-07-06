@@ -33,8 +33,10 @@
   "scripts": {
     "build:transpile": "babel ./src --out-dir build --extensions '.ts'",
     "build:types": "tsc",
+    "lint": "npm-run-all lint:*",
     "lint:types": "tsc",
-    "lint:style": "eslint *.ts",
+    "lint:style": "eslint .",
+    "lint:commits": "commitlint --from=semantic-commit-start --to=HEAD",
     "prepare": "npm-run-all build:*",
     "unittest": "jest",
     "test": "npm-run-all lint:* unittest"

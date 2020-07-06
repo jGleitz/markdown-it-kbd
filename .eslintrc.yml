@@ -1,5 +1,4 @@
 env:
-    browser: true
     commonjs: true
     es6: true
 extends:
@@ -10,6 +9,8 @@ plugins:
     - '@typescript-eslint'
 parserOptions:
     sourceType: module
+ignorePatterns:
+    - build/**/*
 rules:
     indent:
         - error
