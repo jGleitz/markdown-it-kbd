@@ -1,6 +1,9 @@
 // [[kbd]]
 //
 
+import MarkdownIt from "markdown-it";
+import StateInline from "markdown-it/lib/rules_inline/state_inline";
+
 const MARKER_OPEN = '[';
 const MARKER_CLOSE = ']';
 const TAG = 'kbd';
@@ -8,7 +11,7 @@ const TAG = 'kbd';
 /*
  * Add delimiters for double occurrences of MARKER_SYMBOL.
  */
-function tokenize(state, silent) {
+function tokenize(state: StateInline, silent: boolean) {
 	if (silent) {
 		return false;
 	}
@@ -62,6 +65,6 @@ function tokenize(state, silent) {
 	return true;
 }
 
-export default function kbdplugin(markdownit) {
+export default function kbdplugin(markdownit: MarkdownIt) {
 	markdownit.inline.ruler.before('link', 'kbd', tokenize);
 }
