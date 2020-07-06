@@ -28,6 +28,15 @@ describe('markdown-it-kbd', () => {
 		`))
 	})
 
+	it.each([
+		['[[\\[]]', '<kbd>[</kbd>'],
+		['[[\\]]]', '<kbd>]</kbd>'],
+		['[[\\[\\[]]', '<kbd>[[</kbd>'],
+		['[[\\]\\]]]', '<kbd>]]</kbd>']
+	])('supports escaped delimiters: %s', (input, expected) => {
+		expect(md.render(input)).toBe(`<p>${expected}</p>\n`)
+	})
+
 	it('supports deep nesting and markup in nested tags', () => {
 		expect(md.render(trimmed(`
 			[[[[[[Shift]]\`+\`[[_long[[x]]_]]]]-Ctrl]]+[[F4]]	
@@ -73,7 +82,8 @@ describe('markdown-it-kbd', () => {
 		['[[[x]]', '[<kbd>x</kbd>'],
 		['[[[x]]]', '[<kbd>x</kbd>]'],
 		['[[*test*', '[[<em>test</em>'],
-		['[[[[Shift]]+[[F3]]]', '[[<kbd>Shift</kbd>+<kbd>F3</kbd>]']
+		['[[[[Shift]]+[[F3]]]', '[[<kbd>Shift</kbd>+<kbd>F3</kbd>]'],
+		['[[\\\\]]', '<kbd>\\</kbd>']
 	])('renders correctly: %s', (input, expected) => {
 		expect(md.render(input)).toBe(`<p>${expected}</p>\n`)
 	})

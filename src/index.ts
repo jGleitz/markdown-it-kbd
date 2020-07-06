@@ -3,6 +3,7 @@ import StateInline from 'markdown-it/lib/rules_inline/state_inline'
 
 const MARKER_OPEN = '['
 const MARKER_CLOSE = ']'
+const ESCAPE_CHARACTER = '\\'
 const TAG = 'kbd'
 
 /*
@@ -26,10 +27,14 @@ function tokenize(state: StateInline, silent: boolean) {
 	// Find the end sequence
 	let openTagCount = 1
 	let end = -1
-	nextChar = state.src.charAt(start + 2)
+	let skipNext = false
 	for (let i = start + 1; i < max && end === -1; i++) {
-		momChar = state.src.charAt(i) // do not copy from nextChar because we sometimes skip over indices
+		momChar = nextChar
 		nextChar = state.src.charAt(i + 1)
+		if (skipNext) {
+			skipNext = false
+			continue
+		}
 		if (momChar === MARKER_CLOSE && nextChar === MARKER_CLOSE) {
 			openTagCount -= 1
 			if (openTagCount == 0) {
@@ -37,14 +42,16 @@ function tokenize(state: StateInline, silent: boolean) {
 				end = i
 			}
 			// Skip second marker char, it is already counted.
-			i += 1
+			skipNext = true
 		} else if (momChar === MARKER_OPEN && nextChar === MARKER_OPEN) {
 			openTagCount += 1
 			// Skip second marker char, it is already counted.
-			i += 1
+			skipNext = true
 		} else if (momChar === '\n') {
 			// Found end of line before the end sequence. Thus, ignore our start sequence!
 			return false
+		} else if (momChar === ESCAPE_CHARACTER) {
+			skipNext = true
 		}
 	}
 
