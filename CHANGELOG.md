@@ -2,6 +2,18 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# [2.1.0](https://github.com/jGleitz/markdown-it-kbd/compare/v2.0.0...v2.1.0) (2020-07-06)
+
+
+### Bug Fixes
+
+* only require Node.JS >= 6 ([75fece5](https://github.com/jGleitz/markdown-it-kbd/commit/75fece579565cee89f45ea9c3033b2371411c3a6))
+
+
+### Features
+
+* publish Typescript types ([ce9ac56](https://github.com/jGleitz/markdown-it-kbd/commit/ce9ac5604f6f7d07d1c2c03d362e5c6d40cfe76b))
+
 ## [2.0.0] (2018-11-29)
 ### Deprecated
  * Deprecate Node.JS 4 and require Node.JS >= 6
