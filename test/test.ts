@@ -1,5 +1,5 @@
 import markdownit from 'markdown-it'
-// @ts-ignore markdown-it-attrs has no types and it’s not worth the effort adding a *.d.ts fileu
+// @ts-ignore markdown-it-attrs has no types and it’s not worth the effort adding a *.d.ts file
 import markdownItAttrs from 'markdown-it-attrs'
 import markdownItKbd from '../src'
 
