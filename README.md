@@ -6,7 +6,7 @@ Renders `[[x]]` as `<kbd>x</kbd>`. ([`<kbd>`](http://www.w3schools.com/tags/tag_
 ## Usage
 ```js
 const md = require('markdown-it')();
-const kbd = require('markdown-it-kbd');
+const kbd = require('@gerhobbelt/markdown-it-kbd');
 
 md.use(kbd);
 ```
