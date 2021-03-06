@@ -9,7 +9,7 @@
     "kbd"
   ],
   "homepage": "https://github.com/jGleitz/markdown-it-kbd",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "author": {
     "name": "Joshua Gleitze",
     "url": "https://joshuagleitze.de"
