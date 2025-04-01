@@ -33,6 +33,7 @@
   "scripts": {
     "build:transpile": "babel ./src --out-dir build --extensions '.ts'",
     "build:types": "tsc --project src",
+    "build": "npm-run-all build:*",
     "lint": "npm-run-all lint:*",
     "lint:types": "tsc",
     "lint:style": "eslint .",
@@ -40,7 +41,6 @@
     "unittest": "jest",
     "test": "npm-run-all lint:* unittest"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "7.27.0",
     "@babel/core": "7.26.10",
@@ -50,6 +50,7 @@
     "@semantic-release/git": "10.0.1",
     "@types/jest": "29.5.14",
     "@types/markdown-it": "13.0.9",
+    "@types/node": "^22.13.17",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "babel-plugin-add-module-exports": "1.0.4",
