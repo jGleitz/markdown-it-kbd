@@ -2,6 +2,18 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# [3.0.0](https://github.com/jGleitz/markdown-it-kbd/compare/v2.2.2...v3.0.0) (2025-04-01)
+
+
+### chore
+
+* require Node.JS >=v20, test against v20-v23 ([88b2d8a](https://github.com/jGleitz/markdown-it-kbd/commit/88b2d8a084899fd0841ad35d3e5514c14404bf97))
+
+
+### BREAKING CHANGES
+
+* This package now requires Node.JS >= v2
+
 ## [2.2.2](https://github.com/jGleitz/markdown-it-kbd/compare/v2.2.1...v2.2.2) (2021-03-06)
 
 
