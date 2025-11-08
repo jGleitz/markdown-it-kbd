@@ -1,4 +1,4 @@
-# markdown-it-kbd [![Build Status](https://travis-ci.org/jGleitz/markdown-it-prism.svg?branch=master)](https://travis-ci.org/jGleitz/markdown-it-kbd) [![npm version](https://badge.fury.io/js/markdown-it-kbd.svg)](https://badge.fury.io/js/markdown-it-kbd) [![Bower version](https://badge.fury.io/bo/markdown-it-kbd.svg)](https://badge.fury.io/bo/markdown-it-kbd)
+# markdown-it-kbd [![CI](https://github.com/jGleitz/markdown-it-kbd/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jGleitz/markdown-it-kbd/actions/workflows/ci.yml?query=branch%3Amain) [![NPM Version](https://img.shields.io/npm/v/markdown-it-kbd?logo=npm&logoColor=%23DDD)](https://www.npmjs.com/package/markdown-it-kbd)
 > [markdown-it](https://github.com/markdown-it/markdown-it) plugin for keystrokes
 
 Renders `[[x]]` as `<kbd>x</kbd>`. ([`<kbd>`](http://www.w3schools.com/tags/tag_kbd.asp) is the tag for keystrokes).
