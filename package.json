@@ -41,7 +41,7 @@
     "test": "npm-run-all lint:* unittest"
   },
   "peerDependencies": {
-    "markdown-it": ">=9.0.1 && <14.0.0"
+    "markdown-it": ">=9.0.1 && <15.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.28.3",
@@ -52,13 +52,13 @@
     "@eslint/json": "0.14.0",
     "@stylistic/eslint-plugin": "5.5.0",
     "@types/jest": "30.0.0",
-    "@types/markdown-it": "13.0.9",
+    "@types/markdown-it": "14.1.2",
     "@types/node": "24.10.0",
     "babel-plugin-add-module-exports": "1.0.4",
     "eslint": "9.39.1",
     "eslint-plugin-yml": "1.19.0",
     "jest": "30.2.0",
-    "markdown-it": "13.0.2",
+    "markdown-it": "14.1.0",
     "markdown-it-attrs": "4.3.1",
     "npm-run-all2": "8.0.4",
     "semantic-release": "25.0.2",
