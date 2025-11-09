@@ -38,10 +38,11 @@
     "lint:style": "eslint .",
     "prepack": "npm-run-all build:*",
     "unittest": "jest",
-    "test": "npm-run-all lint:* unittest"
+    "test": "npm-run-all lint:* unittest",
+    "release": "semantic-release"
   },
   "peerDependencies": {
-    "markdown-it": ">=9.0.1 && <15.0.0"
+    "markdown-it": ">=9.0.1 <15.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.28.3",
@@ -65,5 +66,5 @@
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.3"
   },
-  "packageManager": "npm@11.6.2"
+  "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"
 }
