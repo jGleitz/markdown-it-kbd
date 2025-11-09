@@ -33,10 +33,49 @@ jobs:
       - name: Unit Tests
         run: npm run unittest
 
+  compatibility:
+    name: markdown-it Backwards Compatibility
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mi-version:
+          - 9.1.0
+          - 10.0.0
+          - 11.0.1
+          - 12.3.2
+          - 13.0.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - name: Cache Node Modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: node-markdown-it-compat-cache-${{ runner.os }}-${{ matrix.mi-version }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            node-markdown-it-compat-cache-${{ runner.os }}-${{ matrix.mi-version }}-
+            node-markdown-it-compat-cache-${{ runner.os }}-
+            node-markdown-it-compat-cache-
+      - name: Prepare
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false "markdown-it@${{ matrix.mi-version }}"
+      - name: Unit Tests
+        run: npm run unittest
+
   release:
     name: Release Check
     runs-on: ubuntu-latest
-    needs: test
+    needs:
+      - test
+      - compatibility
     if: github.event_name == 'push'
     permissions:
       id-token: write # to enable use of OIDC for trusted publishing and npm provenance
