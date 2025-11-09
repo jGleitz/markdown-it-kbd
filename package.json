@@ -42,7 +42,7 @@
     "release": "semantic-release"
   },
   "peerDependencies": {
-    "markdown-it": "14.1.0"
+    "markdown-it": ">=9.0.1 <15.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.28.3",
