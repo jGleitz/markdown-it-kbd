@@ -6,7 +6,6 @@ import markdownItKbd from '../src'
 const trimmed = (text: string) => text.replace(/\n\s*/g, '\n').replace(/^\n/, '')
 
 describe('markdown-it-kbd', () => {
-
 	const md = markdownit().use(markdownItKbd)
 
 	it('renders [[x]] as <kbd>x</kbd>', () => {
@@ -32,7 +31,7 @@ describe('markdown-it-kbd', () => {
 		['[[\\[]]', '<kbd>[</kbd>'],
 		['[[\\]]]', '<kbd>]</kbd>'],
 		['[[\\[\\[]]', '<kbd>[[</kbd>'],
-		['[[\\]\\]]]', '<kbd>]]</kbd>']
+		['[[\\]\\]]]', '<kbd>]]</kbd>'],
 	])('supports escaped delimiters: %s', (input, expected) => {
 		expect(md.render(input)).toBe(`<p>${expected}</p>\n`)
 	})
@@ -83,7 +82,7 @@ describe('markdown-it-kbd', () => {
 		['[[[x]]]', '[<kbd>x</kbd>]'],
 		['[[*test*', '[[<em>test</em>'],
 		['[[[[Shift]]+[[F3]]]', '[[<kbd>Shift</kbd>+<kbd>F3</kbd>]'],
-		['[[\\\\]]', '<kbd>\\</kbd>']
+		['[[\\\\]]', '<kbd>\\</kbd>'],
 	])('renders correctly: %s', (input, expected) => {
 		expect(md.render(input)).toBe(`<p>${expected}</p>\n`)
 	})
