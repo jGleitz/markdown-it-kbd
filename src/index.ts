@@ -1,5 +1,4 @@
-import MarkdownIt from 'markdown-it'
-import StateInline from 'markdown-it/lib/rules_inline/state_inline'
+import MarkdownIt, { StateInline } from 'markdown-it'
 
 const MARKER_OPEN = '['
 const MARKER_CLOSE = ']'
