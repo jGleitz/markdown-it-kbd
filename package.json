@@ -40,6 +40,9 @@
     "unittest": "jest",
     "test": "npm-run-all lint:* unittest"
   },
+  "peerDependencies": {
+    "markdown-it": ">=9.0.1 && <14.0.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.28.3",
     "@babel/core": "7.28.5",
