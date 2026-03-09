@@ -51,7 +51,7 @@
     "@babel/preset-typescript": "7.28.5",
     "@eslint/js": "10.0.1",
     "@eslint/json": "1.0.1",
-    "@stylistic/eslint-plugin": "5.9.0",
+    "@stylistic/eslint-plugin": "5.10.0",
     "@types/jest": "30.0.0",
     "@types/markdown-it": "14.1.2",
     "@types/node": "24.11.0",
