@@ -54,7 +54,7 @@
     "@stylistic/eslint-plugin": "5.10.0",
     "@types/jest": "30.0.0",
     "@types/markdown-it": "14.1.2",
-    "@types/node": "24.12.0",
+    "@types/node": "24.12.2",
     "babel-plugin-add-module-exports": "1.0.4",
     "eslint": "10.1.0",
     "eslint-plugin-yml": "3.3.1",
